@@ -35,7 +35,7 @@ public partial class Tarif
     {
         get
         {
-            var today = new DateTime(2024, 7, 6);
+            var today = new DateTime(2024, 5, 28);
             var daysLeft = Date.DayNumber - DateOnly.FromDateTime(today).DayNumber;
             return daysLeft is > 0 and < 7 ? FontWeights.Bold : FontWeights.Normal;
         }

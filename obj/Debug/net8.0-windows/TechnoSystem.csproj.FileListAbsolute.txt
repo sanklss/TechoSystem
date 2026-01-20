@@ -152,3 +152,9 @@ C:\Users\Григорий\source\repos\Back\TechnoSystem\TechnoSystem\obj\Debug\
 C:\Users\Григорий\source\repos\Back\TechnoSystem\TechnoSystem\obj\Debug\net8.0-windows\ServiceCard.g.cs
 C:\Users\Григорий\source\repos\Back\TechnoSystem\TechnoSystem\obj\Debug\net8.0-windows\ServiceCard.baml
 C:\Users\Григорий\source\repos\Back\TechnoSystem\TechnoSystem\obj\Debug\net8.0-windows\ServicePage.baml
+C:\Users\Григорий\source\repos\Back\TechnoSystem\TechnoSystem\obj\Debug\net8.0-windows\RequestCard.g.cs
+C:\Users\Григорий\source\repos\Back\TechnoSystem\TechnoSystem\obj\Debug\net8.0-windows\RequestPage.g.cs
+C:\Users\Григорий\source\repos\Back\TechnoSystem\TechnoSystem\obj\Debug\net8.0-windows\RequestWindow.g.cs
+C:\Users\Григорий\source\repos\Back\TechnoSystem\TechnoSystem\obj\Debug\net8.0-windows\RequestCard.baml
+C:\Users\Григорий\source\repos\Back\TechnoSystem\TechnoSystem\obj\Debug\net8.0-windows\RequestPage.baml
+C:\Users\Григорий\source\repos\Back\TechnoSystem\TechnoSystem\obj\Debug\net8.0-windows\RequestWindow.baml

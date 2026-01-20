@@ -8,7 +8,7 @@ using TechnoSystem.Models;
 
 namespace TechnoSystem.Services
 {
-    internal class AuthService
+    public class AuthService
     {
         public Role TryAuth(string login, string password)
         {

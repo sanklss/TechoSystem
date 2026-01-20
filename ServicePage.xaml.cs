@@ -32,6 +32,7 @@ namespace TechnoSystem
             _role = role;
             _authService = new AuthService();
             LoadData();
+            AdjustInterface();
         }
 
         private void LoadData()
@@ -42,6 +43,35 @@ namespace TechnoSystem
                     .Include(p => p.Service)
                     .ToList();
             }
+        }
+        private void AdjustInterface()
+        {
+            if (_role == null)
+            {
+                RequestButton.Visibility = Visibility.Collapsed;
+                return;
+            }
+
+
+            switch (_role.Id)
+            {
+                case 1:
+                    RequestButton.Visibility = Visibility.Visible;
+                    break;
+
+                case 2:
+                    RequestButton.Visibility = Visibility.Visible;
+                    break;
+
+                case 3:
+                default:
+                    RequestButton.Visibility = Visibility.Collapsed;
+                    break;
+            }
+        }
+        private void RequestPage_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new RequestPage());
         }
     }
 }
