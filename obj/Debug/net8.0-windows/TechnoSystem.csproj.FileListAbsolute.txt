@@ -144,3 +144,11 @@ C:\Users\Григорий\source\repos\Back\TechnoSystem\TechnoSystem\obj\Debug\
 C:\Users\Григорий\source\repos\Back\TechnoSystem\TechnoSystem\obj\Debug\net8.0-windows\TechnoSystem.pdb
 C:\Users\Григорий\source\repos\Back\TechnoSystem\TechnoSystem\obj\Debug\net8.0-windows\TechnoSystem.genruntimeconfig.cache
 C:\Users\Григорий\source\repos\Back\TechnoSystem\TechnoSystem\obj\Debug\net8.0-windows\ref\TechnoSystem.dll
+C:\Users\Григорий\source\repos\Back\TechnoSystem\TechnoSystem\obj\Debug\net8.0-windows\LoginWindow.g.cs
+C:\Users\Григорий\source\repos\Back\TechnoSystem\TechnoSystem\obj\Debug\net8.0-windows\LoginWindow.baml
+C:\Users\Григорий\source\repos\Back\TechnoSystem\TechnoSystem\obj\Debug\net8.0-windows\TechnoSystem.sourcelink.json
+C:\Users\Григорий\source\repos\Back\TechnoSystem\TechnoSystem\obj\Debug\net8.0-windows\ServicePage.g.cs
+C:\Users\Григорий\source\repos\Back\TechnoSystem\TechnoSystem\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\Григорий\source\repos\Back\TechnoSystem\TechnoSystem\obj\Debug\net8.0-windows\ServiceCard.g.cs
+C:\Users\Григорий\source\repos\Back\TechnoSystem\TechnoSystem\obj\Debug\net8.0-windows\ServiceCard.baml
+C:\Users\Григорий\source\repos\Back\TechnoSystem\TechnoSystem\obj\Debug\net8.0-windows\ServicePage.baml

@@ -43,7 +43,7 @@ public partial class Primer21Context : DbContext
         {
             entity.ToTable("Payment");
 
-            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
             entity.HasOne(d => d.PaymentStatus).WithMany(p => p.Payments)
                 .HasForeignKey(d => d.PaymentStatusId)
@@ -65,7 +65,7 @@ public partial class Primer21Context : DbContext
         {
             entity.ToTable("PaymentStatus");
 
-            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Id).ValueGeneratedOnAdd();
             entity.Property(e => e.Name).HasMaxLength(50);
         });
 
@@ -73,7 +73,7 @@ public partial class Primer21Context : DbContext
         {
             entity.ToTable("PaymentWay");
 
-            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Id).ValueGeneratedOnAdd();
             entity.Property(e => e.Name).HasMaxLength(50);
         });
 
@@ -81,7 +81,7 @@ public partial class Primer21Context : DbContext
         {
             entity.ToTable("Request");
 
-            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
             entity.HasOne(d => d.RequestStatus).WithMany(p => p.Requests)
                 .HasForeignKey(d => d.RequestStatusId)
@@ -103,7 +103,7 @@ public partial class Primer21Context : DbContext
         {
             entity.ToTable("RequestStatus");
 
-            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Id).ValueGeneratedOnAdd();
             entity.Property(e => e.Name).HasMaxLength(50);
         });
 
@@ -111,7 +111,7 @@ public partial class Primer21Context : DbContext
         {
             entity.ToTable("Role");
 
-            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Id).ValueGeneratedOnAdd();
             entity.Property(e => e.Name).HasMaxLength(50);
         });
 
@@ -119,7 +119,7 @@ public partial class Primer21Context : DbContext
         {
             entity.ToTable("Service");
 
-            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Id).ValueGeneratedOnAdd();
             entity.Property(e => e.Category).HasMaxLength(50);
             entity.Property(e => e.Name).HasMaxLength(50);
         });
@@ -128,7 +128,7 @@ public partial class Primer21Context : DbContext
         {
             entity.ToTable("Tarif");
 
-            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Id).ValueGeneratedOnAdd();
             entity.Property(e => e.Image).HasMaxLength(50);
             entity.Property(e => e.Name).HasMaxLength(50);
 
@@ -142,7 +142,7 @@ public partial class Primer21Context : DbContext
         {
             entity.ToTable("User");
 
-            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Id).ValueGeneratedOnAdd();
             entity.Property(e => e.Login).HasMaxLength(50);
             entity.Property(e => e.Password).HasMaxLength(50);
 

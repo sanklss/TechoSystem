@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TechnoSystem.Models;
 
 namespace TechnoSystem
 {
@@ -16,9 +17,18 @@ namespace TechnoSystem
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        Role _role;
+        public MainWindow(Role role)
         {
             InitializeComponent();
+            _role = role;
+            MainFrame.Navigated += MainFrame_Navigated;
+            MainFrame.Navigate(new ServicePage(role));
+        }
+
+        private void MainFrame_Navigated(object sender, NavigationEventArgs e)
+        {
+            
         }
     }
 }
