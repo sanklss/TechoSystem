@@ -32,26 +32,22 @@ namespace TechnoSystem
             {
                 using (var context = new Primer21Context())
                 {
-                    // Загружаем тарифы
                     var tarifs = context.Tarifs
                         .Include(t => t.Service)
                         .OrderBy(t => t.Name)
                         .ToList();
                     TarifComboBox.ItemsSource = tarifs;
 
-                    // Загружаем пользователей
                     var users = context.Users
                         .OrderBy(u => u.Login)
                         .ToList();
                     UserComboBox.ItemsSource = users;
 
-                    // Загружаем статусы
                     var statuses = context.RequestStatuses
                         .OrderBy(s => s.Id)
                         .ToList();
                     StatusComboBox.ItemsSource = statuses;
 
-                    // Устанавливаем выбранные значения для редактирования
                     if (_request.Id > 0)
                     {
                         if (_request.TarifId > 0)
@@ -69,7 +65,6 @@ namespace TechnoSystem
                     }
                     else
                     {
-                        // Для новой заявки выбираем первый статус (обычно "Новая")
                         StatusComboBox.SelectedIndex = 0;
                     }
                 }
@@ -109,7 +104,6 @@ namespace TechnoSystem
             {
                 AvailableLicensesText.Text = $"Доступно: {selectedTarif.FreeLicense}";
 
-                // Подсветка если мало лицензий
                 if (selectedTarif.FreeLicense < 10)
                 {
                     AvailableLicensesText.Foreground = System.Windows.Media.Brushes.Red;
@@ -135,7 +129,6 @@ namespace TechnoSystem
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            // Валидация
             if (TarifComboBox.SelectedItem == null)
             {
                 MessageBox.Show("Выберите тариф!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -168,7 +161,6 @@ namespace TechnoSystem
             {
                 using (var context = new Primer21Context())
                 {
-                    // Проверка доступности лицензий
                     var tarifFromDb = context.Tarifs.Find(selectedTarif.Id);
 
                     if (licenseCount > tarifFromDb.FreeLicense)
@@ -184,7 +176,6 @@ namespace TechnoSystem
 
                     if (_isEditMode)
                     {
-                        // Редактирование существующей заявки
                         requestToSave = context.Requests.Find(_request.Id);
                         if (requestToSave == null)
                         {
@@ -192,15 +183,12 @@ namespace TechnoSystem
                             return;
                         }
 
-                        // Возвращаем старые лицензии
                         if (requestToSave.TarifId == selectedTarif.Id)
                         {
-                            // Тот же тариф
                             tarifFromDb.FreeLicense += _originalLicenseCount;
                         }
                         else
                         {
-                            // Другой тариф - возвращаем в старый, забираем из нового
                             var oldTarif = context.Tarifs.Find(requestToSave.TarifId);
                             if (oldTarif != null)
                             {
@@ -210,12 +198,10 @@ namespace TechnoSystem
                     }
                     else
                     {
-                        // Новая заявка
                         requestToSave = new Request();
                         context.Requests.Add(requestToSave);
                     }
 
-                    // Обновляем данные заявки
                     requestToSave.TarifId = selectedTarif.Id;
                     requestToSave.UserId = selectedUser.Id;
                     requestToSave.RequestStatusId = selectedStatus.Id;
@@ -223,13 +209,10 @@ namespace TechnoSystem
                     requestToSave.LicenseCount = licenseCount;
                     requestToSave.Comment = CommentTextBox.Text;
 
-                    // Забираем лицензии
                     tarifFromDb.FreeLicense -= licenseCount;
 
-                    // Сохраняем изменения
                     context.SaveChanges();
 
-                    // Обновляем ID для новой заявки
                     if (!_isEditMode)
                     {
                         _request.Id = requestToSave.Id;
@@ -261,7 +244,6 @@ namespace TechnoSystem
                         var requestToDelete = context.Requests.Find(_request.Id);
                         if (requestToDelete != null)
                         {
-                            // Возвращаем лицензии
                             var tarif = context.Tarifs.Find(requestToDelete.TarifId);
                             if (tarif != null)
                             {

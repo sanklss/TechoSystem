@@ -23,32 +23,27 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <!-- № заявки -->
         <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
             <TextBlock Text="№ заявки:" Width="120" VerticalAlignment="Center"/>
             <TextBlock x:Name="RequestIdText" Text="" FontWeight="Bold" />
         </StackPanel>
 
-        <!-- Тариф -->
         <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,10">
             <TextBlock Text="Тариф:*" Width="120" VerticalAlignment="Center"/>
             <ComboBox x:Name="TarifComboBox" Width="300" DisplayMemberPath="Name" 
                       SelectionChanged="TarifComboBox_SelectionChanged" FontSize="14"/>
         </StackPanel>
 
-        <!-- Пользователь -->
         <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,0,0,10">
             <TextBlock Text="Клиент:*" Width="120" VerticalAlignment="Center"/>
             <ComboBox x:Name="UserComboBox" Width="300" DisplayMemberPath="Login" FontSize="14"/>
         </StackPanel>
 
-        <!-- Дата -->
         <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0,0,0,10">
             <TextBlock Text="Дата:*" Width="120" VerticalAlignment="Center"/>
             <DatePicker x:Name="DatePicker" Width="300" FontSize="14"/>
         </StackPanel>
 
-        <!-- Количество лицензий -->
         <StackPanel Grid.Row="4" Orientation="Horizontal" Margin="0,0,0,10">
             <TextBlock Text="Кол-во лицензий:*" Width="120" VerticalAlignment="Center"/>
             <TextBox x:Name="LicenseQuantityTextBox" Width="300" FontSize="14"
@@ -57,13 +52,11 @@
                        Foreground="Gray" VerticalAlignment="Center"/>
         </StackPanel>
 
-        <!-- Статус -->
         <StackPanel Grid.Row="5" Orientation="Horizontal" Margin="0,0,0,10">
             <TextBlock Text="Статус:*" Width="120" VerticalAlignment="Center"/>
             <ComboBox x:Name="StatusComboBox" Width="300" DisplayMemberPath="Name" FontSize="14"/>
         </StackPanel>
 
-        <!-- Комментарий -->
         <StackPanel Grid.Row="6" Orientation="Vertical" Margin="0,0,0,15">
             <TextBlock Text="Комментарий:" Width="120" VerticalAlignment="Top"/>
             <TextBox x:Name="CommentTextBox" Width="400" Height="80" 
@@ -71,7 +64,6 @@
                      FontSize="14" VerticalScrollBarVisibility="Auto"/>
         </StackPanel>
 
-        <!-- Кнопки -->
         <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Right">
             <Button x:Name="DeleteButton" 
                     Content="Удалить" 

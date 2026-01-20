@@ -20,11 +20,9 @@ namespace TechnoSystem
                     var requestWindow = new RequestWindow(request);
                     requestWindow.ShowDialog();
 
-                    // Обновляем родительский список
                     if (requestWindow.DialogResult == true)
                     {
                         var parent = Parent as ItemsControl;
-                        // Можно обновить данные
                     }
                 }
             }

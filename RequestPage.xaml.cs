@@ -97,7 +97,6 @@ namespace TechnoSystem
                         .Include(r => r.RequestStatus)
                         .AsQueryable();
 
-                    // Поиск
                     string searchText = SearchTextBox.Text.Trim();
                     if (!string.IsNullOrWhiteSpace(searchText))
                     {
@@ -106,14 +105,12 @@ namespace TechnoSystem
                             r.Id.ToString().Contains(searchText));
                     }
 
-                    // Фильтрация по статусу
                     var selectedStatus = StatusFilterComboBox.SelectedItem as RequestStatus;
                     if (selectedStatus != null && selectedStatus.Id != 0)
                     {
                         query = query.Where(r => r.RequestStatusId == selectedStatus.Id);
                     }
 
-                    // Сортировка
                     query = _isAscendingSort
                         ? query.OrderBy(r => r.Date)
                         : query.OrderByDescending(r => r.Date);
@@ -136,7 +133,7 @@ namespace TechnoSystem
 
                 if (requestWindow.ShowDialog() == true)
                 {
-                    ApplyFilters(); // Обновляем список
+                    ApplyFilters(); 
                 }
             }
             catch (Exception ex)

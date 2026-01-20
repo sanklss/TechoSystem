@@ -7,12 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="120" d:DesignWidth="600">
 
-    <Border BorderBrush="#E0E0E0" 
-            BorderThickness="1" 
-            CornerRadius="8" 
-            Background="White" 
-            Margin="10,5" 
-            Padding="15">
+    <Border BorderBrush="#E0E0E0" Background="White" >
 
         <Grid>
             <Grid.ColumnDefinitions>
@@ -22,50 +17,33 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <!-- Колонка 1: Номер заявки -->
             <StackPanel Grid.Column="0" Width="100">
-                <TextBlock Text="№ заявки:" FontWeight="Bold"/>
-                <TextBlock Text="{Binding Id}" FontSize="16" Foreground="DarkBlue"/>
+                <TextBlock Text="№ заявки:" />
+                <TextBlock Text="{Binding Id}" />
 
-                <TextBlock Text="Клиент:" FontWeight="Bold" Margin="0,10,0,0"/>
-                <TextBlock Text="{Binding User.Login}" TextWrapping="Wrap"/>
+                <TextBlock Text="Клиент:" />
+                <TextBlock Text="{Binding User.Login}" />
             </StackPanel>
 
-            <!-- Колонка 2: Тариф -->
-            <StackPanel Grid.Column="1" Margin="20,0">
-                <TextBlock Text="Тариф:" FontWeight="Bold"/>
-                <TextBlock Text="{Binding Tarif.Name}" FontSize="14"/>
+            <StackPanel Grid.Column="1" >
+                <TextBlock Text="Тариф:" />
+                <TextBlock Text="{Binding Tarif.Name}" />
 
-                <TextBlock Text="Услуга:" FontWeight="Bold" Margin="0,10,0,0"/>
+                <TextBlock Text="Услуга:"/>
                 <TextBlock Text="{Binding Tarif.Service.Name}"/>
             </StackPanel>
 
-            <!-- Колонка 3: Дата и статус -->
-            <StackPanel Grid.Column="2" Margin="20,0">
-                <TextBlock Text="Дата:" FontWeight="Bold"/>
+            <StackPanel Grid.Column="2">
+                <TextBlock Text="Дата:"/>
                 <TextBlock Text="{Binding Date, StringFormat='{}{0:dd.MM.yyyy}'}"/>
 
-                <TextBlock Text="Статус:" FontWeight="Bold" Margin="0,10,0,0"/>
-                <Border Background="{Binding RequestStatus.Color}" 
-                        CornerRadius="3" 
-                        Padding="5,2" 
-                        HorizontalAlignment="Left">
-                    <TextBlock Text="{Binding RequestStatus.Name}" 
-                               Foreground="White"
-                               FontWeight="SemiBold"/>
+                <TextBlock Text="Статус:" />
+                <Border Background="{Binding RequestStatus.Color}" >
+                    <TextBlock Text="{Binding RequestStatus.Name}" />
                 </Border>
             </StackPanel>
 
-            <!-- Колонка 4: Кнопка редактирования -->
-            <Button Grid.Column="3" 
-                    Content="✎" 
-                    FontSize="16"
-                    Width="40" 
-                    Height="40"
-                    Click="EditButton_Click"
-                    ToolTip="Редактировать заявку"
-                    Background="Transparent"
-                    BorderThickness="0"/>
+            <Button Grid.Column="2" Margin="215,0,-11,0" Grid.ColumnSpan="2"/>
         </Grid>
     </Border>
 </UserControl>
