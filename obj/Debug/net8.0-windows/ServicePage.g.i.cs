@@ -69,7 +69,7 @@ namespace TechnoSystem {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/TechnoSystem;component/servicepage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/TechnoSystem;V1.0.0.0;component/servicepage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\ServicePage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TechnoSystem")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+be62cd9a4d4d20049ce1c73b2b2a08d2406333ae")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5916f2a4e6f1929370010315b34f04cab9afae84")]
 [assembly: System.Reflection.AssemblyProductAttribute("TechnoSystem")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TechnoSystem")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
